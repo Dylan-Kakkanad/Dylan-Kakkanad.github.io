@@ -1,0 +1,60 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<div class="blog-container">
+    <h1 class="page-title">My Blog</h1>
+    
+    <div class="blog-posts">
+        {% for post in site.posts %}
+        <article class="blog-preview">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <div class="post-meta">
+                <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                <span class="post-categories">
+                    {% for category in post.categories %}
+                        <a href="/categories/{{ category }}">{{ category }}</a>
+                    {% endfor %}
+                </span>
+            </div>
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+            <a href="{{ post.url }}" class="read-more">Read More</a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.blog-preview {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-preview h2 a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+</style>

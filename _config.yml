@@ -1,0 +1,14 @@
+title: Dylan Kakkanad's Portfolio
+description: Portfolio and Blog of a Software Developer
+baseurl: ""
+url: "https://dylan-kakkanad.github.io"
+github_username: dylan-kakkanad
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
