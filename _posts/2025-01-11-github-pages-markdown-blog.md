@@ -3,6 +3,7 @@ layout: post
 title: "Getting Started with GitHub Pages and Markdown Blogs"
 date: 2025-01-11
 categories: [web-development, blogging]
+permalink: /blog/2025/01/11/github-pages-markdown-blog/
 excerpt: "Learn how to create a simple, cost-effective blog using GitHub Pages and Markdown..."
 ---
 
