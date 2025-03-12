@@ -935,47 +935,17 @@ nav ul {
     min-height: 50px;
 }
 
-.tag {
-    background: rgba(255, 61, 0, 0.1);
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    padding: 5px 10px; /* Consistent padding */
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 61, 0, 0.2);
-    min-width: 60px; /* Minimum width for consistent size */
-    text-align: center; /* Center text within tag */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis for long text */
-    max-width: 150px; /* Maximum width to prevent excessive stretching */
-}
-
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 768px) {
-    .tag {
-        font-size: 1.1rem;
-        padding: 4px 8px;
-        max-width: 120px;
-    }
-}
-
 .project-details {
     margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 .project-date {
     color: var(--accent-color);
     font-size: 1.3rem;
     opacity: 0.9;
-    flex-shrink: 0;
-    min-width: 120px; /* Ensures consistent width */
-    margin-right: 10px; /* Add spacing between date and button */
 }
 
 .project-link {
@@ -986,26 +956,14 @@ nav ul {
     border: 1px solid rgba(255, 61, 0, 0.3);
     border-radius: 25px;
     transition: all 0.3s ease;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.8rem;
     background: rgba(255, 61, 0, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
-    min-width: 120px; /* Fixed width for consistent button size */
-    height: 40px; /* Fixed height to ensure vertical alignment */
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-/* Responsive font size adjustment for smaller screens */
-@media screen and (max-width: 768px) {
-    .project-link {
-        font-size: 1.1rem;
-        padding: 0.6rem 1.2rem;
-    }
 }
 
 .project-link::before {
@@ -1168,6 +1126,28 @@ nav ul {
 .form-group textarea:focus {
     border-color: var(--accent-color);
     outline: none;
+}
+
+/* Form Submission Button Styles */
+.contact-form button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.form-status p {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
 }
 
 /* ===== Blog Section ===== */
