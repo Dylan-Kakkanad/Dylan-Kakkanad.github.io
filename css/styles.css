@@ -1,0 +1,248 @@
+/* 
+   Dylan J Kakkanad Portfolio
+   Unified Stylesheet for Consistent Design
+*/
+
+/* ===== CSS Variables for Global Theming ===== */
+:root {
+    /* Color Palette */
+    --primary-color: #ff3d00;
+    --secondary-color: #ff9100;
+    --accent-color: #ff3d00;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --light-text: #ffffff;
+    --gray-text: #aaaaaa;
+    --border-color: #2a2a2a;
+
+    /* Typography */
+    --body-font: 'Poppins', sans-serif;
+    --heading-font: 'Montserrat', sans-serif;
+
+    /* Layout */
+    --container-width: 1400px;
+    --section-padding: 8rem 0;
+    --transition: all 0.3s ease;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Base Reset and Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+/* ===== Typography ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Layout Utilities ===== */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: var(--text-color);
+    margin-bottom: 3.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* ===== Header Styles ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    background-color: var(--darker-bg);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+header .logo a {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+header nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+/* ===== Button Styles ===== */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===== Blog Specific Styles ===== */
+.blog-section {
+    padding: var(--section-padding);
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    margin-top: 6rem; /* Adjust for fixed header */
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+}
+
+.blog-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--gray-text);
+    font-size: 1.4rem;
+}
+
+.blog-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.blog-excerpt {
+    color: var(--gray-text);
+    margin-bottom: 1.5rem;
+}
+
+.blog-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.blog-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 2rem;
+    }
+
+    header nav {
+        display: none; /* Will be replaced with mobile menu in JS */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
