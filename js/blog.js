@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
             date: 'Jan 11, 2025',
             category: 'Web Development',
             excerpt: 'Learn how to create a simple, cost-effective blog using GitHub Pages and Markdown...',
-            url: '/blog/2025/01/11/github-pages-markdown-blog.html'
+            url: '/blog/2025/01/11/github-pages-markdown-blog/'  // Correct format
         },
         {
             title: 'Agentic AI in Supply Chain Management',
             date: 'Jan 1, 2025',
             category: 'Artificial Intelligence',
             excerpt: 'Exploring the transformative potential of Agentic AI in optimizing supply chain operations...',
-            url: '/blog/2025/01/01/agentic-ai-supply-chain.html'
+            url: '/blog/2025/01/01/agentic-ai-supply-chain/'  // Correct format
         }
     ];
 

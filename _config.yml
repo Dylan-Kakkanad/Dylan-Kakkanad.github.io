@@ -6,7 +6,7 @@ github_username: dylan-kakkanad
 
 # Build settings
 markdown: kramdown
-permalink: /blog/:title/
+permalink: /blog/:year/:month/:day/:title/
 
 # Plugins
 plugins:

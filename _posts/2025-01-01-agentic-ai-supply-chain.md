@@ -3,7 +3,6 @@ layout: post
 title: "Agentic AI in Supply Chain Management"
 date: 2025-01-01
 categories: [artificial-intelligence, supply-chain]
-permalink: /blog/2025/01/01/agentic-ai-supply-chain/
 excerpt: "Exploring the transformative potential of Agentic AI in optimizing supply chain operations..."
 ---
 
