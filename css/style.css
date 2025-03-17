@@ -1349,6 +1349,62 @@ nav ul {
     border: 1px solid rgba(255,255,255,0.05);
 }
 
+/* Blog Post Styling */
+.blog-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--darker-bg);
+    color: var(--text-color);
+}
+
+.blog-post-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.blog-post-title {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gray-text);
+    font-size: 1rem;
+}
+
+.blog-post-content {
+    line-height: 1.8;
+}
+
+.blog-post-content h2, 
+.blog-post-content h3 {
+    color: var(--accent-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.category-tag {
+    background-color: var(--accent-color);
+    color: var(--darker-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.category-tag:hover {
+    background-color: var(--secondary-color);
+}
 
 /* ===== Footer ===== */
 footer {
