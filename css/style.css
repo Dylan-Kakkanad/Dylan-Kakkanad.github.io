@@ -658,14 +658,21 @@ nav ul {
 
 .about-content {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-image {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
 .about-text {
     flex: 1;
-    max-width: 1000px;
-    padding: 1rem 0;
+    padding-left: 2rem;
 }
 
 .about-text p {
@@ -685,6 +692,15 @@ nav ul {
 }
 
 @media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .about-text {
+        padding-left: 0;
+    }
+    
     .about-text p {
         font-size: 1.7rem;
         margin-bottom: 2.5rem;
@@ -695,6 +711,28 @@ nav ul {
         font-size: 1.5rem;
         padding: 15px 35px;
     }
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== Skills Section ===== */
@@ -1284,6 +1322,7 @@ nav ul {
     color: var(--text-light);
     border: 1px solid rgba(255,255,255,0.05);
 }
+
 
 /* ===== Footer ===== */
 footer {

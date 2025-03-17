@@ -4,22 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Blog posts configuration
     const blogPosts = [
         {
-            title: 'Getting Started with GitHub Pages and Markdown Blogs',
-            date: 'Jan 11, 2025',
-            category: 'Web Development',
-            excerpt: 'Learn how to create a simple, cost-effective blog using GitHub Pages and Markdown...',
-            url: '/blog/2025/01/11/github-pages-markdown-blog/'  // Correct format
+            title: 'Enhancing Productivity: My Google Sheets Integration with Perplexity AI',
+            date: 'Mar 17, 2025',
+            category: 'Productivity & AI',
+            excerpt: 'As a recent graduate, I developed a comprehensive Google Apps Script that integrates Perplexity AI\'s powerful language capabilities directly into Google Sheets, streamlining workflows and demonstrating practical problem-solving skills.',
+            url: '/blog/2025/03/17/automating-and-enhancing-email-workflows/'
         },
         {
             title: 'Agentic AI in Supply Chain Management',
             date: 'Jan 1, 2025',
             category: 'Artificial Intelligence',
             excerpt: 'Exploring the transformative potential of Agentic AI in optimizing supply chain operations...',
-            url: '/blog/2025/01/01/agentic-ai-supply-chain/'  // Correct format
+            url: '/blog/2025/01/01/agentic-ai-supply-chain/'
         }
     ];
 
     function renderBlogPosts() {
+        blogGrid.innerHTML = ''; // Clear existing blog posts
         blogPosts.forEach(post => {
             const blogCard = document.createElement('div');
             blogCard.classList.add('blog-card');
