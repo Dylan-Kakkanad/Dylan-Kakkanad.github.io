@@ -238,10 +238,26 @@
 
     <!-- Blog Section -->
     <section id="blog" class="blog">
-        <h2 class="section-title">My Blog</h2>
+        <h2 class="section-title">My Blogs</h2>
         <div class="container">
             <div class="blog-grid">
-                <!-- Blog posts will be dynamically added by JavaScript -->
+                {% for post in site.posts %}
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <span class="blog-date">{{ post.date | date: "%b %d, %Y" }}</span>
+                        <span class="blog-category">
+                            {% for category in post.categories %}
+                                {{ category }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </span>
+                    </div>
+                    <h3 class="blog-title">{{ post.title }}</h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <div class="blog-footer">
+                        <a href="{{ post.url }}" class="read-more">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

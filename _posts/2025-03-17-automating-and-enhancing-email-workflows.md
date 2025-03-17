@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Enhancing Productivity: My Google Sheets Integration with Perplexity AI"
+date: 2025-03-17
+permalink: /blog/2025/03/17/automating-and-enhancing-email-workflows/
+categories: [productivity, artificial-intelligence]
+excerpt: "Developing a comprehensive Google Apps Script that integrates Perplexity AI's directly into Google Sheets..."
+---
+
 # Enhancing Productivity: My Google Sheets Integration with Perplexity AI
 
 ## The Challenge I Identified

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Enhancing Productivity: My Google Sheets Integration with Perplexity AI',
             date: 'Mar 17, 2025',
             category: 'Productivity & AI',
-            excerpt: 'Developing a comprehensive Google Apps Script that integrates Perplexity AI\'s powerful language capabilities directly into Google Sheets.',
+            excerpt: 'Developing a comprehensive Google Apps Script that integrates Perplexity AI\'s directly into Google Sheets.',
             url: '/blog/2025/03/17/automating-and-enhancing-email-workflows/'
         },
         {
