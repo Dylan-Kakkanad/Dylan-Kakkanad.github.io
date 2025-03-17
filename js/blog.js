@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Enhancing Productivity: My Google Sheets Integration with Perplexity AI',
             date: 'Mar 17, 2025',
             category: 'Productivity & AI',
-            excerpt: 'Leveraging custom spreadsheet functions and email automation to seamlessly integrate Perplexity AI...',
+            excerpt: 'Developing a comprehensive Google Apps Script that integrates Perplexity AI\'s powerful language capabilities directly into Google Sheets.',
             url: '/blog/2025/03/17/automating-and-enhancing-email-workflows/'
         },
         {
             title: 'Agentic AI in Supply Chain Management',
-            date: 'Jan 1, 2025',
+            date: 'Jan 25, 2025',
             category: 'Artificial Intelligence',
-            excerpt: 'Exploring the transformative potential of Agentic AI in optimizing supply chain operations...',
-            url: '/blog/2025/01/01/agentic-ai-supply-chain/'
+            excerpt: 'Exploring the transformative potential of Agentic AI in optimizing supply chain operations and revolutionizing logistics.',
+            url: '/blog/2025/01/25/agentic-ai-supply-chain/'
         }
     ];
 
@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <h3 class="blog-title">${post.title}</h3>
                 <p class="blog-excerpt">${post.excerpt}</p>
-                <a href="${post.url}" class="blog-link">Read More</a>
+                <div class="blog-footer">
+                    <a href="${post.url}" class="read-more">Read More</a>
+                </div>
             `;
 
             blogGrid.appendChild(blogCard);

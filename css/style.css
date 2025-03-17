@@ -728,11 +728,24 @@ nav ul {
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 1 / 1;
+    max-height: 300px;
 }
 
 .profile-image:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        flex: 0 0 250px;
+    }
+    
+    .profile-image {
+        max-width: 250px;
+        max-height: 250px;
+    }
 }
 
 /* ===== Skills Section ===== */
@@ -1244,6 +1257,19 @@ nav ul {
 }
 
 .blog-link:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+.blog-card .read-more {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.blog-card .read-more:hover {
     color: var(--secondary-color);
     transform: translateX(5px);
 }
