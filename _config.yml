@@ -5,10 +5,24 @@ url: "https://dylan-kakkanad.github.io"
 github_username: dylan-kakkanad
 
 # Build settings
-markdown: kramdown
+include:
+  - _pages
+  - _pages/categories
+
+# Permalink structure for blog posts
 permalink: /blog/:year/:month/:day/:title/
 
-# Plugins
+# Markdown and syntax highlighting settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Syntax highlighter theme
+highlighter: rouge
+
+# Plugins (if you're using GitHub Pages)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate

@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="/css/syntax.css">
 <style>
     body {
         background-color: var(--darker-bg) !important;
@@ -48,6 +49,27 @@ layout: default
     .blog-post-content p {
         margin-bottom: 1.5rem;
         color: var(--text-color) !important;
+    }
+
+    .blog-post-content ul, 
+    .blog-post-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+        color: var(--text-color);
+    }
+
+    .blog-post-content li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    .blog-post-content ul li::before {
+        content: "•";
+        color: var(--accent-color);
+        font-weight: bold;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
     }
 
     .category-tag {

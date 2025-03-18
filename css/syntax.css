@@ -1,0 +1,48 @@
+/* Syntax highlighting for code blocks */
+.highlight {
+    background-color: #1d1f21;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.highlight pre {
+    background-color: transparent;
+    color: #c5c8c6;
+}
+
+/* Language-specific colors */
+.highlight .k { color: #b294bb; } /* Keyword */
+.highlight .kd { color: #b294bb; } /* Keyword Declaration */
+.highlight .kt { color: #f0c674; } /* Keyword Type */
+.highlight .n { color: #c5c8c6; } /* Normal text */
+.highlight .s { color: #b5bd68; } /* String */
+.highlight .m { color: #de935f; } /* Number */
+.highlight .c { color: #969896; font-style: italic; } /* Comment */
+.highlight .nb { color: #81a2be; } /* Name Builtin */
+
+/* Line numbers */
+.highlight .lineno { 
+    color: #969896; 
+    display: inline-block; 
+    padding-right: 1em; 
+    margin-right: 1em; 
+    border-right: 1px solid #444; 
+}
+
+/* Ensure code blocks in blog posts are readable */
+.blog-post-content pre {
+    background-color: #1d1f21;
+    color: #c5c8c6;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.blog-post-content code {
+    background-color: rgba(135, 135, 135, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
