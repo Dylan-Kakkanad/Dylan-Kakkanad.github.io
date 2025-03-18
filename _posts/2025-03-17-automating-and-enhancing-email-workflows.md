@@ -322,4 +322,4 @@ I'm looking forward to discussing how I can apply these skills to create similar
 
 ---
 
-*For more information about my technical background and other projects, please contact me at [your-email@example.com] or view my portfolio at [your-portfolio-url].*
+*For more information about my technical background and other projects, please contact me at [dylanjk@bu.edu] or view my portfolio at [dylan-kakkanad.github.io].*
