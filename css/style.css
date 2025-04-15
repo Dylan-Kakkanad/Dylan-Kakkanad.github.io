@@ -25,6 +25,189 @@
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== Light Theme Variables ===== */
+body.light-theme {
+    --primary-color: #e65100; /* Slightly darker orange for better contrast on light bg */
+    --secondary-color: #ff9100;
+    --accent-color: #e65100;
+    --dark-bg: #f8f9fa;        /* Light background */
+    --darker-bg: #ffffff;     /* White background */
+    --card-bg: #ffffff;       /* White card background */
+    --text-color: #212529;    /* Dark text */
+    --light-text: #495057;    /* Slightly lighter dark text */
+    --gray-text: #6c757d;     /* Medium gray text */
+    --border-color: #dee2e6;  /* Light border color */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Lighter card shadow */
+}
+
+/* Specific overrides for light theme */
+body.light-theme header {
+    background: rgba(255, 255, 255, 0.8); /* Lighter header background */
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme header.sticky {
+     background: rgba(255, 255, 255, 0.9);
+     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .logo a,
+body.light-theme .nav-link {
+    color: var(--text-color); /* Dark text for header links */
+}
+
+body.light-theme .menu-toggle .bar {
+    background: var(--text-color); /* Dark menu bars */
+}
+
+body.light-theme .hero h1,
+body.light-theme .hero .profession,
+body.light-theme .hero-description {
+    color: var(--text-color); /* Dark hero text */
+    text-shadow: none; /* Remove text shadow on light bg */
+}
+
+body.light-theme .profession .wrap {
+     /* Keep gradient text, maybe adjust shadow if needed */
+     text-shadow: 0 0 10px rgba(230, 81, 0, 0.2);
+}
+
+body.light-theme .social-icon {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+body.light-theme .social-icon:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+body.light-theme .about,
+body.light-theme .skills,
+body.light-theme .projects,
+body.light-theme .contact,
+body.light-theme .blog {
+    background: var(--dark-bg); /* Use light background for sections */
+}
+body.light-theme .contact {
+     background: var(--darker-bg);
+}
+
+body.light-theme .section-title {
+    color: var(--text-color);
+}
+
+body.light-theme .skill-group {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+body.light-theme .skill-group:hover {
+    border-color: rgba(230, 81, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(230, 81, 0, 0.08);
+}
+body.light-theme .skill-group::before {
+     /* Adjust gradient or remove if too strong on light */
+     opacity: 0.1;
+}
+body.light-theme .skill-group:hover::before {
+     opacity: 0.15;
+}
+body.light-theme .skill-group-title {
+    color: var(--text-color);
+}
+body.light-theme .skill-group:hover .skill-group-title {
+    color: var(--primary-color);
+}
+body.light-theme .skill-list {
+    color: var(--gray-text);
+}
+body.light-theme .skill-group:hover .skill-list {
+    color: var(--text-color);
+}
+
+
+body.light-theme .project-card {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+}
+body.light-theme .project-info h3 {
+    color: var(--text-color); /* Dark title default */
+}
+body.light-theme .project-card:hover .project-info h3 {
+    color: var(--primary-color); /* Orange title on hover */
+}
+body.light-theme .project-info p {
+    color: var(--light-text);
+}
+body.light-theme .tag {
+    background: rgba(0, 0, 0, 0.05); /* Light tag background */
+    color: var(--gray-text);
+}
+body.light-theme .project-link {
+    /* Styles should work okay, border/color already use variables */
+}
+
+body.light-theme .blog-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: var(--card-shadow);
+}
+body.light-theme .blog-title {
+    color: var(--text-color);
+}
+body.light-theme .blog-excerpt {
+    color: var(--gray-text);
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group textarea {
+    background: var(--darker-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+body.light-theme .form-group input:focus,
+body.light-theme .form-group textarea:focus {
+    border-color: var(--accent-color);
+}
+
+body.light-theme footer {
+    background: #e9ecef; /* Light footer background */
+    color: var(--text-color);
+}
+body.light-theme .footer-logo a {
+    color: var(--text-color);
+}
+body.light-theme .footer-social .social-icon {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+body.light-theme .footer-social .social-icon:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+body.light-theme .back-to-top {
+    background: var(--primary-color);
+    color: white;
+}
+body.light-theme .back-to-top:hover {
+    background: var(--secondary-color);
+}
+
+/* Adjust cursor for light theme if needed */
+body.light-theme .cursor {
+    background: var(--primary-color);
+    mix-blend-mode: normal; /* Disable difference blend mode */
+}
+body.light-theme .cursor-follower {
+    border: 1px solid var(--primary-color);
+    mix-blend-mode: normal; /* Disable difference blend mode */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -80,7 +263,7 @@ section {
 .section-title {
     font-size: 2.8rem;
     color: var(--text-light);
-    margin-bottom: 3.5rem;
+    margin-bottom: 10px; /* Further reduce margin below the heading */
     text-align: left;
     max-width: 1400px;
     margin-left: auto;
@@ -370,6 +553,34 @@ nav ul {
     margin: 6px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
+}
+
+/* Theme Toggle Button Styles */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem; /* Adjust size as needed */
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem; /* Add some space */
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Light theme specific style for toggle */
+body.light-theme #theme-toggle {
+    color: var(--text-color);
+}
+
+body.light-theme #theme-toggle:hover {
+    color: var(--primary-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -881,7 +1092,7 @@ nav ul {
 
 /* ===== Projects Section ===== */
 .projects {
-    padding: 100px 0;
+    padding: 30px 0; /* Further reduce top and bottom padding */
     background: var(--dark-bg);
 }
 
@@ -896,94 +1107,84 @@ nav ul {
     margin-top: 3rem;
 }
 
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+/* Projects Section Styling */
+.projects-wrapper {
+    position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    height: auto; /* Let content determine height */
+    display: flex;
+    align-items: center;
+}
+
+.projects-horizontal {
+    display: flex;
+    gap: 20px; /* Space between project cards */
+    transform: translateX(0); /* Initial position */
+    will-change: transform;
+}
+
+/* Project Card Styling */
+.project-card {
+    flex: 0 0 45%; /* Adjust the width of each card */
+    max-width: 400px; /* Limit the maximum width */
+    background: rgba(255, 255, 255, 0.05); /* Slightly darker background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     position: relative;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    min-height: 450px;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        circle at 50% 0%,
-        rgba(255, 61, 0, 0.15),
-        transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
+    padding: 20px;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 61, 0, 0.3);
-    box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.1),
-        0 0 30px rgba(255, 61, 0, 0.1);
-}
-
-.project-card:hover::before {
-    opacity: 1;
+    transform: translateY(-5px); /* Add hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
 
 .project-info {
-    padding: 2.5rem;
-    position: relative;
-    z-index: 1;
-    height: 100%;
+    padding: 1.5rem; /* Reduce padding inside the card */
     display: flex;
     flex-direction: column;
+    gap: 10px; /* Add spacing between elements */
 }
 
 .project-info h3 {
-    color: var(--text-light);
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem; /* Adjust font size */
     font-weight: 600;
-    transition: color 0.3s ease;
-    line-height: 1.3;
+    color: var(--text-light); /* Default title color to white */
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease; /* Add transition for hover effect */
 }
 
 .project-info p {
-    color: var(--gray-text);
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex-grow: 1;
-    min-height: 90px;
-}
-
-.project-card:hover .project-info h3 {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(255, 61, 0, 0.2);
-}
-
-.project-card:hover .project-info p {
-    color: var(--text-light);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--text-light); /* Use light text color */
+    margin-bottom: 1rem;
 }
 
 .project-tags {
-    margin: 0 0 2rem 0;
     display: flex;
-    gap: 1.2rem;
     flex-wrap: wrap;
-    min-height: 50px;
+    gap: 10px; /* Adjust spacing between tags */
+    margin-top: 10px;
+}
+
+.tag {
+    font-size: 1rem;
+    padding: 5px 12px; /* Slightly more padding for pill shape */
+    background: rgba(42, 42, 42, 0.8); /* Darker brown/gray background */
+    color: var(--text-light);
+    border-radius: 50px; /* Rounded pill shape */
+    white-space: nowrap;
 }
 
 .project-details {
@@ -995,143 +1196,37 @@ nav ul {
 }
 
 .project-date {
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.project-view-btn {
-    text-align: right;
-}
-
-.project-view-btn a {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background-color: var(--accent-color);
-    color: var(--darker-bg);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.project-view-btn a:hover {
-    background-color: var(--secondary-color);
-}
-
-@media screen and (max-width: 768px) {
-    .project-details {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-
-    .project-date {
-        font-size: 1rem;
-        width: 100%;
-    }
-
-    .project-view-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .project-view-btn a {
-        width: 100%;
-        text-align: center;
-        font-size: 0.9rem;
-    }
+    font-size: 1rem;
+    color: var(--primary-color); /* Use orange for the date */
 }
 
 .project-link {
-    color: var(--text-light);
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent; /* Default background transparent */
+    color: var(--primary-color); /* Default text color orange */
+    border: 1px solid var(--primary-color); /* Add orange border */
+    border-radius: 5px;
     text-decoration: none;
-    font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(255, 61, 0, 0.3);
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    background: rgba(255, 61, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-
-.project-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-}
-
-.project-link i,
-.project-link span {
-    position: relative;
-    z-index: 1;
-}
-
-.project-link i {
-    font-size: 1.6rem;
-}
-
-.project-link:hover::before {
-    opacity: 1;
+    gap: 5px;
+    transition: all 0.3s ease;
 }
 
 .project-link:hover {
+    background: var(--primary-color); /* Orange background on hover */
+    color: white; /* White text on hover */
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 61, 0, 0.2);
-    border-color: transparent;
+    border-color: var(--primary-color); /* Ensure border stays orange */
 }
 
-.tag {
-    background: rgba(255, 61, 0, 0.1);
-    color: var(--text-light);
-    padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(255, 61, 0, 0.2);
-    border-radius: 25px;
-    font-size: 1.3rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
+/* Change title color to orange when hovering over the card */
+.project-card:hover .project-info h3 {
+    color: var(--primary-color);
 }
 
-.tag::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255, 61, 0, 0.2), rgba(255, 145, 0, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 61, 0, 0.15);
-    border-color: rgba(255, 61, 0, 0.3);
-}
-
-.tag:hover::before {
-    opacity: 1;
-}
-
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;

@@ -73,21 +73,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth Scroll for Navigation Links
+    // Smooth Scroll for Navigation Links using GSAP ScrollToPlugin
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
+
+            if (targetId === '#') { // Handle edge case for links like href="#"
+                 gsap.to(window, { duration: 0.8, scrollTo: 0, ease: "power2.inOut" });
+                 return;
+            }
+
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
+                // Calculate offset dynamically, considering potential header height changes
+                let offset = 80; // Default offset
+                const header = document.querySelector('header');
+                if (header) {
+                    offset = header.offsetHeight + 10; // Add a little extra space
+                }
+
+                gsap.to(window, {
+                    duration: 0.8, // Adjust duration as needed
+                    scrollTo: {
+                        y: targetId, // Use the ID selector directly
+                        offsetY: offset // Offset from the top
+                    },
+                    ease: "power2.inOut" // Smooth easing function
                 });
             }
         });
@@ -166,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialize GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin); // Register ScrollToPlugin
 
     // Hero section animations
     gsap.from('.hero-description', {
@@ -276,6 +289,28 @@ document.addEventListener('DOMContentLoaded', function() {
     if (allFilter) {
         allFilter.classList.add('active');
     }
+
+    // Horizontal scrolling for 'My Projects' section
+    const projectsWrapper = document.querySelector('.projects-wrapper');
+    const projectsHorizontal = document.querySelector('.projects-horizontal');
+
+    // Calculate the total width of the horizontal scroll
+    const totalScrollWidth = projectsHorizontal.scrollWidth - projectsWrapper.offsetWidth;
+
+    // GSAP ScrollTrigger for horizontal scrolling
+    gsap.to(projectsHorizontal, {
+        x: () => -totalScrollWidth, // Move horizontally
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '#projects', // Trigger based on the whole section
+            pin: '#projects',     // Pin the whole section (title + cards)
+            start: 'center center', // Start when the top of the section hits the center
+            end: () => `+=${projectsHorizontal.scrollWidth}`, // Scroll distance based on card width
+            scrub: 1, // Add smoothing (1 second delay) to the scrub effect
+            anticipatePin: 1,
+            invalidateOnRefresh: true // Recalculate on resize/refresh
+        },
+    });
 
     // Contact section animations
     gsap.from('.contact-info', {
@@ -389,4 +424,39 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const toggleIcon = themeToggle.querySelector('i'); // Get the icon element
+
+    // Function to set the theme
+    function setTheme(theme) {
+        if (theme === 'light') {
+            body.classList.add('light-theme');
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.classList.remove('light-theme');
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    // Apply saved theme on initial load
+    const currentTheme = localStorage.getItem('theme');
+    // Default to dark theme if no preference is saved
+    setTheme(currentTheme === 'light' ? 'light' : 'dark');
+
+    // Add click listener to the toggle button
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    });
+
 });
