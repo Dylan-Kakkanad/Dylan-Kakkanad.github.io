@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.querySelector('nav'); // Select the <nav> element directly
 
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active'); // Check if navMenu exists before removing class
         });
     });
 
