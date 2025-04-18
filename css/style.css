@@ -228,10 +228,6 @@ body {
     overflow-x: hidden;
 }
 
-main {
-    padding-top: 8rem; /* Ensure content starts below fixed header */
-}
-
 a {
     text-decoration: none;
     color: inherit;

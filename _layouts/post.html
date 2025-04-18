@@ -16,24 +16,7 @@ layout: default
         color: var(--text-color) !important;
     }
 
-    .blog-post-header {
-        margin-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 1rem;
-    }
-
-    .blog-post-title {
-        color: var(--accent-color) !important;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .blog-post-meta {
-        display: flex;
-        justify-content: space-between;
-        color: var(--gray-text) !important;
-        font-size: 1rem;
-    }
+    /* Removed .blog-post-header, .blog-post-title, .blog-post-meta styles as the elements were removed */
 
     .blog-post-content {
         line-height: 1.8;
@@ -97,19 +80,7 @@ layout: default
 
 <div class="blog-post-container">
     <article class="blog-post">
-        <header class="blog-post-header">
-            <h1 class="blog-post-title">{{ page.title }}</h1>
-            <div class="blog-post-meta">
-                <span class="blog-post-date">{{ page.date | date: "%B %d, %Y" }}</span>
-                <span class="blog-post-categories">
-                    {% if page.categories %}
-                        {% for category in page.categories %}
-                            <a href="/categories/{{ category }}" class="category-tag">{{ category }}</a>
-                        {% endfor %}
-                    {% endif %}
-                </span>
-            </div>
-        </header>
+        <!-- Removed blog-post-header section as requested -->
 
         <div class="blog-post-content">
             {{ content }}
