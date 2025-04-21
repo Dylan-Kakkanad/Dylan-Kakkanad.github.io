@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Sticky Header
-    const header = document.querySelector('.header');
+    const header = document.querySelector('header'); // Corrected selector
     const scrollThreshold = 100;
 
     window.addEventListener('scroll', () => {
