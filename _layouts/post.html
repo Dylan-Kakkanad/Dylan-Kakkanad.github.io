@@ -4,16 +4,17 @@ layout: default
 <link rel="stylesheet" href="/css/syntax.css">
 <style>
     body {
-        background-color: var(--darker-bg) !important;
-        color: var(--text-color) !important;
+        /* Let default layout handle theme background/color */
+        /* background-color: var(--darker-bg); */
+        /* color: var(--text-color); */
     }
     
     .blog-post-container {
         max-width: 800px;
         margin: 0 auto;
         padding: 2rem;
-        /* background: var(--darker-bg) !important; */ /* Removed background to prevent overlap */
-        color: var(--text-color) !important;
+        /* background: var(--darker-bg); */ /* Removed background to prevent overlap */
+        color: var(--text-color); /* Removed !important */
     }
 
     /* Removed .blog-post-header, .blog-post-title, .blog-post-meta styles as the elements were removed */
@@ -24,14 +25,14 @@ layout: default
 
     .blog-post-content h2, 
     .blog-post-content h3 {
-        color: var(--accent-color) !important;
+        color: var(--accent-color); /* Removed !important */
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
 
     .blog-post-content p {
         margin-bottom: 1.5rem;
-        color: var(--text-color) !important;
+        color: var(--text-color); /* Removed !important */
     }
 
     .blog-post-content ul, 
@@ -56,8 +57,8 @@ layout: default
     }
 
     .category-tag {
-        background-color: var(--accent-color) !important;
-        color: var(--darker-bg) !important;
+        background-color: var(--accent-color); /* Removed !important */
+        color: var(--darker-bg); /* Removed !important */
         padding: 0.25rem 0.5rem;
         border-radius: 4px;
         text-decoration: none;
@@ -66,15 +67,15 @@ layout: default
     }
 
     .category-tag:hover {
-        background-color: var(--secondary-color) !important;
+        background-color: var(--secondary-color); /* Removed !important */
     }
 
     a {
-        color: var(--accent-color) !important;
+        color: var(--accent-color); /* Removed !important */
     }
 
     a:hover {
-        color: var(--secondary-color) !important;
+        color: var(--secondary-color); /* Removed !important */
     }
 </style>
 
