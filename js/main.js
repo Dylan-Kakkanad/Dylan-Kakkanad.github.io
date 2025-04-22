@@ -294,23 +294,33 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectsWrapper = document.querySelector('.projects-wrapper');
     const projectsHorizontal = document.querySelector('.projects-horizontal');
 
-    // Calculate the total width of the horizontal scroll
-    const totalScrollWidth = projectsHorizontal.scrollWidth - projectsWrapper.offsetWidth;
+    // Only run horizontal scroll logic if elements exist
+    if (projectsWrapper && projectsHorizontal) {
+        // Calculate the total width of the horizontal scroll
+        // Ensure elements have rendered and have width before calculating
+        let totalScrollWidth = 0;
+        if (projectsHorizontal.scrollWidth > projectsWrapper.offsetWidth) {
+             totalScrollWidth = projectsHorizontal.scrollWidth - projectsWrapper.offsetWidth;
+        }
 
-    // GSAP ScrollTrigger for horizontal scrolling
-    gsap.to(projectsHorizontal, {
-        x: () => -totalScrollWidth, // Move horizontally
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#projects', // Trigger based on the whole section
-            pin: '#projects',     // Pin the whole section (title + cards)
-            start: 'center center', // Start when the top of the section hits the center
-            end: () => `+=${projectsHorizontal.scrollWidth}`, // Scroll distance based on card width
-            scrub: 1, // Add smoothing (1 second delay) to the scrub effect
-            anticipatePin: 1,
-            invalidateOnRefresh: true // Recalculate on resize/refresh
-        },
-    });
+
+        // GSAP ScrollTrigger for horizontal scrolling
+        gsap.to(projectsHorizontal, {
+            x: () => -totalScrollWidth, // Move horizontally
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '#projects', // Trigger based on the whole section
+                pin: '#projects',     // Pin the whole section (title + cards)
+                start: 'center center', // Start when the top of the section hits the center
+                end: () => `+=${projectsHorizontal.scrollWidth}`, // Scroll distance based on card width
+                scrub: 1, // Add smoothing (1 second delay) to the scrub effect
+                anticipatePin: 1,
+                invalidateOnRefresh: true // Recalculate on resize/refresh
+            },
+        });
+    } else {
+        console.log("Project horizontal scroll elements not found on this page."); // Optional log
+    }
 
     // Contact section animations
     gsap.from('.contact-info', {
