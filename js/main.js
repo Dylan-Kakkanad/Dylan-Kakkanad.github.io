@@ -419,21 +419,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Back to top button
     const backToTopBtn = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    
-    backToTopBtn.addEventListener('click', () => {
+
+    if (backToTopBtn) { // Check if the button exists
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
+} else {
+    console.log("Back to top button not found on this page."); // Optional log
+}
 
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
