@@ -427,8 +427,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
+    console.log('Theme Toggle Element:', themeToggle); // Debug log
     const body = document.body;
-    const toggleIcon = themeToggle.querySelector('i'); // Get the icon element
+    const toggleIcon = themeToggle ? themeToggle.querySelector('i') : null; // Check if themeToggle exists before querying
+    console.log('Theme Toggle Icon Element:', toggleIcon); // Debug log
 
     // Function to set the theme
     function setTheme(theme) {
@@ -447,16 +449,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Apply saved theme on initial load
     const currentTheme = localStorage.getItem('theme');
+    console.log('Current theme from localStorage:', currentTheme); // Debug log
     // Default to dark theme if no preference is saved
     setTheme(currentTheme === 'light' ? 'light' : 'dark');
+    console.log('Initial theme set to:', body.classList.contains('light-theme') ? 'light' : 'dark'); // Debug log
 
     // Add click listener to the toggle button
-    themeToggle.addEventListener('click', () => {
-        if (body.classList.contains('light-theme')) {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
-    });
+    if (themeToggle) { // Check if the button exists before adding listener
+        themeToggle.addEventListener('click', () => {
+            console.log('Theme toggle button clicked!'); // Debug log
+            const isLight = body.classList.contains('light-theme');
+            console.log('Currently light theme?', isLight); // Debug log
+            setTheme(isLight ? 'dark' : 'light');
+            console.log('Theme changed to:', body.classList.contains('light-theme') ? 'light' : 'dark'); // Debug log
+        });
+        console.log('Theme toggle click listener added.'); // Debug log
+    } else {
+        console.error('Theme toggle button (#theme-toggle) not found. Listener not added.'); // Debug log
+    }
 
 });
